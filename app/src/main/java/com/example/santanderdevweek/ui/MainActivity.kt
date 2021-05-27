@@ -1,5 +1,6 @@
 package com.example.santanderdevweek.ui
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -30,12 +31,13 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    @SuppressLint("SetTextI18n")
     private fun bindOnView(conta: Conta){
         findViewById<TextView>(R.id.txt_usuario).text = conta.cliente.nome
         findViewById<TextView>(R.id.txt_agencia).text = conta.agencia
         findViewById<TextView>(R.id.txt_conta).text = conta.numero
         findViewById<TextView>(R.id.txt_saldo).text = conta.saldo
-        findViewById<TextView>(R.id.txt_saldolimite).text = conta.limite
+        findViewById<TextView>(R.id.txt_valorsaldolimite).text = conta.limite
         findViewById<TextView>(R.id.txt_cartaofinalvalue).text = conta.cartao.numeroCartao
 
     }

@@ -41,14 +41,25 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/txt_usuario"
+        android:id="@+id/txt_ola"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Olá Mari"
+        android:text="@string/txt_ola"
         android:layout_margin="16dp"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mari"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toEndOf="@+id/txt_ola" />
 
     <TextView
     android:id="@+id/txt_agencia"
@@ -58,8 +69,8 @@
     android:textStyle="bold"
     android:layout_marginTop="8dp"
     android:textColor="@color/white"
-    app:layout_constraintTop_toBottomOf="@+id/txt_usuario"
-    app:layout_constraintStart_toStartOf="@id/txt_usuario" />
+    app:layout_constraintTop_toBottomOf="@+id/txt_ola"
+    app:layout_constraintStart_toStartOf="@id/txt_ola" />
 
     <TextView
         android:id="@+id/txt_conta"
@@ -99,7 +110,7 @@
                 android:id="@+id/txt_saldodisponivel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Saldo disponível"
+                android:text="@string/txt_saldodisponivel"
                 android:textSize="18sp"
                 android:layout_margin="16dp"
                 app:layout_constraintTop_toTopOf="@id/mgv_update"
@@ -130,7 +141,7 @@
                 android:id="@+id/txt_saldolimite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Saldo - Limite"
+                android:text="@string/txt_saldolimite"
                 android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/txt_saldo"
                 app:layout_constraintStart_toStartOf="@+id/txt_saldo"/>
@@ -156,7 +167,7 @@
                 android:id="@+id/txt_extrato"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ver Extrato"
+                android:text="@string/txt_verextrato"
                 android:textColor="@color/redSecondary"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -196,7 +207,7 @@
                 android:id="@+id/txt_cardpagar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pagar"
+                android:text="@string/txt_pagar"
                 app:layout_constraintTop_toBottomOf="@+id/mgv_cartao"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -234,7 +245,7 @@
                 android:id="@+id/txt_transferir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Transferir"
+                android:text="@string/txt_transferir"
                 app:layout_constraintTop_toBottomOf="@+id/mgv_transferir"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -272,7 +283,7 @@
                 android:id="@+id/txt_recarregar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Recarga"
+                android:text="@string/txt_recarga"
                 app:layout_constraintTop_toBottomOf="@+id/mgv_recarregar"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -296,7 +307,7 @@
         android:id="@+id/txt_cartaofinal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cartão Final"
+        android:text="@string/txt_cartaofinal"
         android:textColor="@color/white"
         android:layout_marginLeft="16dp"
         app:layout_constraintStart_toStartOf="@id/mgv_cartaofinal"
