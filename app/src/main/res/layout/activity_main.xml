@@ -1,28 +1,327 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="409dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="1dp" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/mgv_imageview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/redPrimary"
+        app:layout_constraintDimensionRatio="16:6"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/txt_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Olá Mari"
+        android:layout_margin="16dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+    android:id="@+id/txt_agencia"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Ag 2030"
+    android:textStyle="bold"
+    android:layout_marginTop="8dp"
+    android:textColor="@color/white"
+    app:layout_constraintTop_toBottomOf="@+id/txt_usuario"
+    app:layout_constraintStart_toStartOf="@id/txt_usuario" />
+
+    <TextView
+        android:id="@+id/txt_conta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cc 0122112-5"
+        android:textStyle="bold"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="@+id/txt_agencia"
+        app:layout_constraintStart_toEndOf="@id/txt_agencia" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mtv_cardsaldo"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_agencia"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/mgv_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_update_black_24dp"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+            <TextView
+                android:id="@+id/txt_saldodisponivel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saldo disponível"
+                android:textSize="18sp"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toTopOf="@id/mgv_update"
+                app:layout_constraintLeft_toRightOf="@id/mgv_update"
+                app:layout_constraintBottom_toBottomOf="@id/mgv_update"/>
+
+            <ImageView
+                android:id="@+id/mgv_expand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_expand_less_black_24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <TextView
+                android:id="@+id/txt_saldo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$ 1.200,00"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@id/txt_saldodisponivel"
+                app:layout_constraintStart_toStartOf="@+id/mgv_update"/>
+
+            <TextView
+                android:id="@+id/txt_saldolimite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saldo - Limite"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/txt_saldo"
+                app:layout_constraintStart_toStartOf="@+id/txt_saldo"/>
+
+            <TextView
+                android:id="@+id/txt_valorsaldolimite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$ 2.345,00"
+                android:layout_marginLeft="8dp"
+                app:layout_constraintStart_toEndOf="@+id/txt_saldolimite"
+                app:layout_constraintTop_toTopOf="@+id/txt_saldolimite"/>
+
+            <View
+                android:id="@+id/viw_linha"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toBottomOf="@id/txt_saldolimite"/>
+
+            <TextView
+                android:id="@+id/txt_extrato"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ver Extrato"
+                android:textColor="@color/redSecondary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/viw_linha"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mtv_pagar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/mtv_cardsaldo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/mtv_transferir">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/mgv_cartao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_credit_card_black_24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_cardpagar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/txt_cardpagar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pagar"
+                app:layout_constraintTop_toBottomOf="@+id/mgv_cartao"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mtv_transferir"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/mtv_cardsaldo"
+        app:layout_constraintStart_toEndOf="@+id/mtv_pagar"
+        app:layout_constraintEnd_toStartOf="@+id/mtv_recarregar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/mgv_transferir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_credit_card_black_24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_transferir"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/txt_transferir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transferir"
+                app:layout_constraintTop_toBottomOf="@+id/mgv_transferir"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/mtv_recarregar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/mtv_cardsaldo"
+        app:layout_constraintStart_toEndOf="@+id/mtv_transferir"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/mgv_recarregar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_credit_card_black_24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_recarregar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"/>
+
+            <TextView
+                android:id="@+id/txt_recarregar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recarga"
+                app:layout_constraintTop_toBottomOf="@+id/mgv_recarregar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageView
+        android:id="@+id/mgv_cartaofinal"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_margin="16dp"
+        android:background="@color/redPrimary"
+        app:layout_constraintTop_toBottomOf="@+id/mtv_pagar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/txt_cartaofinal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cartão Final"
+        android:textColor="@color/white"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toStartOf="@id/mgv_cartaofinal"
+        app:layout_constraintTop_toTopOf="@+id/mgv_cartaofinal"
+        app:layout_constraintBottom_toBottomOf="@id/mgv_cartaofinal"/>
+
+    <TextView
+        android:id="@+id/txt_cartaofinalvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0033"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintStart_toEndOf="@id/txt_cartaofinal"
+        app:layout_constraintTop_toTopOf="@+id/txt_cartaofinal" />
+
+    <ImageView
+        android:id="@+id/mgv_expandir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_expand_more_black_24dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/mgv_cartaofinal"
+        app:layout_constraintTop_toTopOf="@+id/mgv_cartaofinal"
+        app:layout_constraintEnd_toEndOf="@+id/mgv_cartaofinal"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
